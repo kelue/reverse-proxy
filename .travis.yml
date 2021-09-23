@@ -1,6 +1,4 @@
 language: php
-php:
-  - 7.0
 
 services:
   - docker
@@ -21,4 +19,5 @@ script:
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push $DOCKER_USERNAME/reverse-proxy
+  - echo "great job"
 
