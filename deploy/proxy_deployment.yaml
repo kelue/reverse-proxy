@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reverseproxy
+  name: reverse_proxy
   labels:
-    service: reverseproxy
+    service: reverse_proxy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: reverseproxy
+      service: reverse_proxy
   template:
     metadata:
       labels:
-        service: reverse proxy
+        service: reverse_proxy
     spec:
       containers:
-      - name: reverseproxy
+      - name: reverse_proxy
         image: kelue/reverse-proxy
         ports:
         - containerPort: 8080
